@@ -122,7 +122,7 @@ class Board:
         for ship in self.ships:
             if d in ship.dots:
                 ship.lives -= 1
-                self.field[d.x][d.y] = "X"
+                self.field[d.x][d.y] = "X"  # буквой "Х" будут обозначаться подбитые корабли
                 if ship.lives == 0:
                     self.count += 1
                     self.contour(ship, verb=True)
@@ -132,7 +132,7 @@ class Board:
                     print("The ship is injured!")
                     return True
 
-        self.field[d.x][d.y] = "."
+        self.field[d.x][d.y] = "T"  # буквой "Т" будут обозначаться промахи
         print("Miss!")
         return False
 
